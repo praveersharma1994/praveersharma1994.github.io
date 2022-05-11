@@ -1,0 +1,128 @@
+Time: 02/08/2018 01:59:44 PM
+-----------------------------------------------------------
+Message: 8/orderAmount /customerEmail /orderId /appId /orderNote /customerName /customerPhone /checksumUrl  /
+StackTrace: 8/orderAmount /customerEmail /orderId /appId /orderNote /customerName /customerPhone /checksumUrl  /
+Source: 8/orderAmount /customerEmail /orderId /appId /orderNote /customerName /customerPhone /checksumUrl  /
+TargetSite: 8/orderAmount /customerEmail /orderId /appId /orderNote /customerName /customerPhone /checksumUrl  /
+-----------------------------------------------------------
+
+Time: 03/08/2018 12:59:00 PM
+-----------------------------------------------------------
+Message: An item with the same key has already been added.
+StackTrace:    at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at GenerateChecksum.ProcessRequest(HttpContext context) in h:\CurrentProjects2018\FabAccessories\GenerateChecksum.ashx:line 30
+Source: mscorlib
+TargetSite: Void ThrowArgumentException(System.ExceptionResource)
+-----------------------------------------------------------
+
+Time: 03/08/2018 12:59:00 PM
+-----------------------------------------------------------
+Message: 0/test
+StackTrace: 0/test
+Source: 0/test
+TargetSite: 0/test
+-----------------------------------------------------------
+
+Time: 03/08/2018 12:59:02 PM
+-----------------------------------------------------------
+Message: An item with the same key has already been added.
+StackTrace:    at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at GenerateChecksum.ProcessRequest(HttpContext context) in h:\CurrentProjects2018\FabAccessories\GenerateChecksum.ashx:line 30
+Source: mscorlib
+TargetSite: Void ThrowArgumentException(System.ExceptionResource)
+-----------------------------------------------------------
+
+Time: 03/08/2018 12:59:02 PM
+-----------------------------------------------------------
+Message: 0/test
+StackTrace: 0/test
+Source: 0/test
+TargetSite: 0/test
+-----------------------------------------------------------
+
+Time: 03/08/2018 02:13:36 PM
+-----------------------------------------------------------
+Message: No Value Send
+StackTrace: No Value Send
+Source: No Value Send
+TargetSite: No Value Send
+-----------------------------------------------------------
+
+Time: 03/08/2018 02:25:26 PM
+-----------------------------------------------------------
+Message: The best overloaded method match for 'FabFashionAccessories.CashFreeToken.Main(string, string, string, string)' has some invalid arguments
+StackTrace:    at CallSite.Target(Closure , CallSite , CashFreeToken , String , Object , String , String )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute5[T0,T1,T2,T3,T4,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
+   at FabFashionAccessories.Appcheckout(String data) in h:\CurrentProjects2018\FabAccessories\App_code\FabFashionAccessories.cs:line 1103
+Source: Anonymously Hosted DynamicMethods Assembly
+TargetSite: System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, CashFreeToken, System.String, System.Object, System.String, System.String)
+-----------------------------------------------------------
+
+Time: 03/08/2018 02:40:02 PM
+-----------------------------------------------------------
+Message: No Value Send
+StackTrace: No Value Send
+Source: No Value Send
+TargetSite: No Value Send
+-----------------------------------------------------------
+
+Time: 26/12/2018 12:20:09 PM
+-----------------------------------------------------------
+Message: Value was either too large or too small for an Int16.
+StackTrace:    at System.Int16.Parse(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt16(String value)
+   at FabFashionAccessories.Appcheckout(String data) in d:\Software\Shivangi\FabAccessories\App_code\FabFashionAccessories.cs:line 1113
+Source: mscorlib
+TargetSite: Int16 Parse(System.String, System.Globalization.NumberStyles, System.Globalization.NumberFormatInfo)
+-----------------------------------------------------------
+
+Time: 25/01/2019 03:47:23 PM
+-----------------------------------------------------------
+Message: Unexpected JSON token when reading DataTable. Expected StartArray, got StartObject. Path '', line 1, position 1.
+StackTrace:    at Newtonsoft.Json.Converters.DataTableConverter.ReadJson(JsonReader reader, Type objectType, Object existingValue, JsonSerializer serializer)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.DeserializeConvertable(JsonConverter converter, JsonReader reader, Type objectType, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type)
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute3[T0,T1,T2,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at FabFashionAccessories.Appcheckout(String data) in d:\Software\Shivangi\FabAccessories\App_code\FabFashionAccessories.cs:line 949
+Source: Newtonsoft.Json
+TargetSite: System.Object ReadJson(Newtonsoft.Json.JsonReader, System.Type, System.Object, Newtonsoft.Json.JsonSerializer)
+-----------------------------------------------------------
+
+Time: 25/01/2019 03:48:46 PM
+-----------------------------------------------------------
+Message: Unexpected JSON token when reading DataTable. Expected StartArray, got StartObject. Path '', line 1, position 1.
+StackTrace:    at Newtonsoft.Json.Converters.DataTableConverter.ReadJson(JsonReader reader, Type objectType, Object existingValue, JsonSerializer serializer)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.DeserializeConvertable(JsonConverter converter, JsonReader reader, Type objectType, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type)
+   at FabFashionAccessories.Appcheckout(String data) in d:\Software\Shivangi\FabAccessories\App_code\FabFashionAccessories.cs:line 949
+Source: Newtonsoft.Json
+TargetSite: System.Object ReadJson(Newtonsoft.Json.JsonReader, System.Type, System.Object, Newtonsoft.Json.JsonSerializer)
+-----------------------------------------------------------
+
+Time: 25/01/2019 03:50:42 PM
+-----------------------------------------------------------
+Message: Unexpected JSON token when reading DataTable. Expected StartArray, got StartObject. Path '', line 1, position 1.
+StackTrace:    at Newtonsoft.Json.Converters.DataTableConverter.ReadJson(JsonReader reader, Type objectType, Object existingValue, JsonSerializer serializer)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.DeserializeConvertable(JsonConverter converter, JsonReader reader, Type objectType, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type)
+   at FabFashionAccessories.Appcheckout(String data) in d:\Software\Shivangi\FabAccessories\App_code\FabFashionAccessories.cs:line 949
+Source: Newtonsoft.Json
+TargetSite: System.Object ReadJson(Newtonsoft.Json.JsonReader, System.Type, System.Object, Newtonsoft.Json.JsonSerializer)
+-----------------------------------------------------------
+

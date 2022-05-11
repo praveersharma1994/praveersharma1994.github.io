@@ -1,0 +1,21 @@
+﻿using System.Web;
+using System.Web.Routing;
+using System.Web.UI;
+using System.Web.Compilation;
+/// <summary>
+/// Summary description for RouteHandler
+/// </summary>
+public   class RouteHandler : IRouteHandler
+{
+    private string _physicalFile;
+    public RouteHandler(string physicalFile)
+    {
+        _physicalFile = physicalFile;
+    }
+
+    public IHttpHandler GetHttpHandler(RequestContext requestContext)
+    {
+        HttpContext.Current.Items["RouteData"] = requestContext.RouteData;
+        return BuildManager.CreateInstanceFromVirtualPath(_physicalFile, typeof(Page)) as Page;
+    }
+}

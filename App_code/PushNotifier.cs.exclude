@@ -1,0 +1,30 @@
+﻿using OneSignal.CSharp.SDK.Resources.Notifications;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Web;
+
+/// <summary>
+/// Summary description for PushNotifier
+/// </summary>
+public static class PushNotifier
+{
+    private static Guid AppId = new Guid("95ccd9fa-6162-47fa-8401-16b4133b6bc2");
+    private static OneSignal.CSharp.SDK.OneSignalClient client = new OneSignal.CSharp.SDK.OneSignalClient("MmE0YjFjODYtNjcyMy00MTEwLTk5NmUtYWZiNWM3YWYwYzdm");
+
+    public static void SendPromotionsNotification(string Prmoname, List<string> IncludePlayerIds, string UploaderName, string imgpath,string noti,string title)
+    {
+        NotificationCreateOptions options = new NotificationCreateOptions();
+        options.AppId = AppId;
+        options.MutableContent = true;
+        options.IncludePlayerIds = IncludePlayerIds;
+        options.Contents.Add("en", Prmoname);
+        options.Headings.Add("en", String.Format(title, UploaderName));
+        options.BigPictureForAndroid = string.Format("{0}/{1}", System.Configuration.ConfigurationManager.AppSettings["CurrentEnvironment"], "http://fabfashionaccessories.com/fablogo.png");
+        Dictionary<string, string> data = new Dictionary<string, string>();      
+        data.Add("notify", noti);
+        options.Data = data;
+        client.Notifications.Create(options);
+    }
+}

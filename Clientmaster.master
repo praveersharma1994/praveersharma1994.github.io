@@ -1,0 +1,504 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Clientmaster.master.cs" Inherits="Clientmaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <%--<title>Online Shopping India- Shop Fashion, Jewelry, Electronics, Home & Lifestyle | Fab fashion Accessories </title>
+    <meta name="keyword" content="Online Shopping India, Online Fashion Accessories Shopping, Women Fashion Jewellery, Online Accessories Shopping India" />
+    <meta name="description" content="Online Shopping India. Buy, Bags, Jewelry, Beauty Accessories, Home & Fashion, Kids, Sports, and Electronics Products at very affordable prices. Free Shipping & Cash on Delivery Available”" />--%>
+
+    <link rel="shortcut icon" href="images/favicons/favicon.png" />
+
+      <link href='<%#Page.ResolveUrl("MagicSuggest/magicsuggest.css") %>' rel="stylesheet" hreflang="en" />
+    <script async src='<%#Page.ResolveUrl("MagicSuggest/magicsuggest.js") %>'></script>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/slick.css" />
+    <link rel="stylesheet" href="css/style.css" media="all" />
+    <link rel="canonical" href=" https://www.sstylefactory.com/" />
+
+    <script src='<%#(Common.GetLatestVersion(Page.ResolveUrl("js/jquery-3.4.0.min.js"))) %>'></script>
+    <script src='<%#(Common.GetLatestVersion(Page.ResolveUrl("js/bootstrap.min.js"))) %>'></script>
+    <script src='<%#(Common.GetLatestVersion(Page.ResolveUrl("js/slick.min.js"))) %>'></script>
+    <script src='<%#(Common.GetLatestVersion(Page.ResolveUrl("js/main.js"))) %>'></script>
+    <script src='<%#(Common.GetLatestVersion(Page.ResolveUrl("js/gallery.js"))) %>'></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134917246-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-134917246-1');
+    </script>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+
+        <asp:ScriptManager ID="sm1" runat="server"></asp:ScriptManager>
+
+
+        <!--
+    ==================== Header   -->
+
+        <header id="header">
+
+            <div class="topBar hide-md-m">
+                <ul class="top-menu">
+                    <li><a href='<%= Page.ResolveUrl("aboutus.html") %>'>About Us</a></li>
+                    <li><a href='<%= Page.ResolveUrl("helpcenter.html") %>'>Help Center</a></li>
+                    <li><a href='<%= Page.ResolveUrl("downloadapp.html") %>' target="_blank">
+                        <img src='<%= Page.ResolveUrl("images/mobile-icon.png") %>' width="14" />
+                        Get APP</a></li>
+                    <li class="social-info">
+                        <a href="https://www.facebook.com/Fabaccessoriesonline/" target="_blank">
+                            <img src='<%= Page.ResolveUrl("images/facebook.png") %>' width="14" /></a>
+                        <a href="https://twitter.com/Fabfashion20" target="_blank">
+                            <img src='<%= Page.ResolveUrl("images/twitter.png") %>' width="14" /></a>
+                        <a href="https://www.instagram.com/fabfashion_fashionjewelry/?hl=en" target="_blank">
+                            <img src='<%= Page.ResolveUrl("images/instagram.png") %>' width="14" /></a>
+                        <a href="https://in.pinterest.com/fabfashionaccessories/" target="_blank">
+                            <img src='<%= Page.ResolveUrl("images/pinterest.png") %>' width="14" /></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="middleBar">
+                <div class="row">
+                    <div class="col-md-2 col-sm-3 col-xs-6">
+                        <a href="javascript:void(0)" class="menuToggler hide-md-d">
+                            <img src='<%= Page.ResolveUrl("images/nav-bar.png") %>' width="24" /></a>
+                        <span class="closeNav hide-md-d"></span>
+                        <div class="logo">
+                            <a href='<%= Page.ResolveUrl("index.html") %>'>
+                                <img class="img-responsive" src='<%= Page.ResolveUrl("images/logo3.png") %>' width="200" /></a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-push-7 col-md-3 col-sm-push-6 col-sm-3 col-xs-6">
+                        <ul class="loginCart">
+                            <li class="searchOpen hide-md-d">
+                                <a id="msearch-btn" href="javascript:void(0)">
+                                    <img src='<%= Page.ResolveUrl("images/search-icon.png") %>' width="24" /></a>
+                            </li>
+                            <li class="wishlist-box">
+                                <a href='<%= Page.ResolveUrl("wishlist.html") %>'>
+                                    <img src='<%= Page.ResolveUrl("images/heart-icon.png") %>' width="24" />
+                                   <%-- <span class="short-items">2</span>--%>
+                                    <asp:Label ID="lblwishlistitems" runat="server" CssClass="short-items"></asp:Label>
+                                </a>
+                            </li>
+                            <li class="cart-box">
+                                <a href='<%= Page.ResolveUrl("mycart.html") %>'>
+                                    <img src='<%= Page.ResolveUrl("images/cart-icon.png") %>' width="24" />
+                                    <%--<span class="cart-items">2</span>--%>
+                                    <asp:Label ID="lblcartitems" runat="server" CssClass="cart-items"></asp:Label>
+                                </a>
+                            </li>
+                            <li class="loginBox">
+                                <a href="javascript:void(0)" data-toggle="collapse" data-target="#logincollapse"><span class="hide-ip" id="lnk_login" runat="server">Login / Sign Up</span>
+                                    <img src='<%= Page.ResolveUrl("images/user-icon.png") %>' width="24" /></a>
+                                <ul id="logincollapse" class="collapse login-dropdown">
+                                    <li id="limyaccount" runat="server" visible="false"><a href='<%= Page.ResolveUrl("myaccount.html") %>'><i class="fa fa-user-circle"></i>My Account</a></li>
+                                    <li id="limyorder" runat="server" visible="false"><a href='<%= Page.ResolveUrl("myaccount.html") %>'><i class="fa fa-cube"></i>My Order</a></li>
+                                    <%--<li><a href="track-order.html"><i class="fa fa-search-plus"></i>Track Order</a></li>--%>
+                                    <li class="signup" id="usersignup" runat="server">
+                                        <a href="javascript:void(0)" class="btn theme-btn newUser">New User? Sign Up</a></li>
+                                    <li class="loginlogout" id="userlogin" runat="server">
+                                        <a href="javascript:void(0)" class="btn login-btn">Existing User? Log In</a></li>
+                                    <%--<button style="" class="btn logout-btn">Log Out</button></li>--%>
+                                    <li class="loginlogout" id="logoutbtn" runat="server">
+                                        <asp:LinkButton ID="lnklogout" CssClass="btn login-btn" runat="server" Text="Log Out" OnClick="lnklogout_Click"></asp:LinkButton>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-pull-3 col-md-7 col-sm-pull-3 col-sm-7 col-xs-12">
+                        <div class="searchBox hide-md-m">
+                            <a class="close-msearch hide-md-d" href="javascript:void(0)"><i class="fa fa-angle-left"></i></a>
+                            <div class="search-form">
+                               <%-- <input id="searchitem" class="form-control" type="search" placeholder="What are you looking for?" />--%>
+                                <asp:TextBox ID="txtsearch" runat="server" CssClass="form-control" placeholder="What are you looking for?" autocomplete="off"  ></asp:TextBox>
+                                <%--<input type="text" name="" id="txtwebsearch" autocomplete="off" placeholder="What are you looking for?"  class="form-control magicsuggest" onkeydown="Javascript: if (event.keyCode==13) getproduct();" />--%>
+                                <%--<div class="trending-search" style="display: none;">
+                                    <div class="title">Trending</div>
+                                    <a href="#"><i class="fa fa-search"></i>Home Utilities</a>
+                                    <a href="#"><i class="fa fa-search"></i>Electronics</a>
+                                    <a href="#"><i class="fa fa-search"></i>Watches</a>
+                                </div>--%>
+                                <%--<button class="btn search-btn"><i class="fa fa-search"></i>Search</button>--%>
+                               <%-- <asp:Button ID="btnsearch" runat="server" Text="Search" CssClass="btn search-btn" />--%>
+                                <asp:LinkButton ID="lnksearch" runat="server" CssClass="btn search-btn" OnClick="lnksearch_Click" >
+                                    <i class="fa fa-search"></i> Search
+                                </asp:LinkButton>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="category">
+                <div class="mobilelogo hide-md-d">
+                    <a href='<%= Page.ResolveUrl("index.html") %>'>
+                        <img class="img-responsive" src='<%= Page.ResolveUrl("images/logo.png") %>' width="72" /></a>
+                </div>
+                <ul class="category-menu">
+
+                    <asp:Repeater ID="rptmenu" runat="server">
+                        <ItemTemplate>
+                            <li><a href='<%# Page.ResolveUrl("collection/" + Common.url(Eval("collectionname").ToString())+"-"+ Eval("collectionid") + ".html") %>'><%# Eval("CollectionName") %></a></li>
+                        </ItemTemplate>
+                    </asp:Repeater>
+
+                    <%--<li><a href="#">Jewellery</a></li>
+                <li><a href="category.html">Women's Bags</a></li>
+                <li><a href="#">Men's Bags</a></li>
+                <li><a href="#">Kids</a></li>
+                <li><a href="#">Home Utilities</a></li>
+                <li><a href="#">Electronics</a></li>
+                <li><a href="#">Watches</a></li>
+                <li><a href="#">Beauty & Health</a></li>
+                <li><a href="#">Sports & Fitness</a></li>--%>
+                </ul>
+                <ul class="category-menu bottom-menu hide-md-d">
+                    <li><a href='<%= Page.ResolveUrl("aboutus.html") %>'>About Us</a></li>
+                    <li><a href='<%= Page.ResolveUrl("helpcenter.html") %>'>Help Center</a></li>
+                    <li><a href='<%= Page.ResolveUrl("downloadapp.html") %>' target="_blank">
+                        <img src='<%= Page.ResolveUrl("images/mobile-icon.png") %>' width="14" />
+                        Get APP</a></li>
+                    <li class="social-info">
+                        <a href="https://www.facebook.com/Fabaccessoriesonline/" target="_blank">
+                            <img src='<%= Page.ResolveUrl("images/facebook.png")%>' width="18" /></a>
+                        <a href="https://twitter.com/Fabfashion20" target="_blank">
+                            <img src='<%= Page.ResolveUrl("images/twitter.png") %>' width="18" /></a>
+                        <a href="https://www.instagram.com/fabfashion_fashionjewelry/?hl=en" target="_blank">
+                            <img src='<%= Page.ResolveUrl("images/instagram.png") %>' width="18" /></a>
+                        <a href="https://in.pinterest.com/fabfashionaccessories/" target="_blank">
+                            <img src='<%= Page.ResolveUrl("images/pinterest.png") %>' width="18" /></a>
+                    </li>
+                </ul>
+            </div>
+
+        </header>
+
+        <asp:ContentPlaceHolder ID="cp1" runat="server">
+        </asp:ContentPlaceHolder>
+
+
+
+        <!--<div class="home-banner">
+        <div class="bannerSlider">
+            <div class="item">
+                <img class="img-responsive" src="images/imgpsh_fullsize_slide2.jpg" />
+            </div>
+            <div class="item">
+                <img class="img-responsive" src="images/imgpsh_fullsize_slide.jpg" />
+            </div>
+        </div>
+    </div>-->
+
+
+
+
+
+
+        <!-- LOGIN REGISTER PoPUp  -->
+
+        <div id="userLogin" class="userPopup">
+            <div class="innerbody">
+                <div class="accountBox">
+                    <button type="button" class="close closePopup" onclick="backtologin();">
+                        <img src='<%= Page.ResolveUrl("images/close.png") %>' width="12" /></button>
+                    <div class="login-form">
+                        <h3>Login to access your account</h3>
+
+                        <%--<div class="login-option text-center">
+                            <button class="btn login-with-google"><i class="fa fa-google"></i>Login with Google</button>
+                            <button class="btn login-with-facebook"><i class="fa fa-facebook"></i>Login with Facebook</button>
+                        </div>
+
+                        <div class="devider text-center">— or — </div>--%>
+
+                        <div class="form-group">
+                            <%--<input class="form-control" type="email" placeholder="Username" />--%>
+                            <asp:TextBox ID="txtloginemail" runat="server" CssClass="form-control" placeholder="Email"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rf11" runat="server" CssClass="error" ControlToValidate="txtloginemail" Display="Dynamic" ErrorMessage="Enter Registered Email" ForeColor="Red" ValidationGroup="login"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="re1" runat="server" CssClass="error" ControlToValidate="txtloginemail" Display="Dynamic" ErrorMessage="Enter Valid Email Format" ForeColor="Red" ValidationGroup="login" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+
+                        </div>
+                        <div class="form-group">
+                            <%-- <input class="form-control" type="password" placeholder="Password" />--%>
+                            <asp:TextBox ID="txtloginpass" runat="server" TextMode="Password" CssClass="form-control" placeholder="Password"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" CssClass="error" ControlToValidate="txtloginpass" Display="Dynamic" ErrorMessage="Enter Password" ForeColor="Red" ValidationGroup="login"></asp:RequiredFieldValidator>
+
+                        </div>
+                        <div class="form-group forget-password">
+                            <a href="javascript:void(0)" onclick="showforgotdiv();">Forgot Your Password?</a>
+                        </div>
+                        <div class="button-box">
+                            <%-- <button class="btn theme-btn" type="button">Login</button>--%>
+                            <asp:Button ID="btnlogin" runat="server" Text="Login" CssClass="btn theme-btn" ValidationGroup="login" OnClick="btnlogin_Click" />
+                        </div>
+                        <div class="not-register text-center">
+                            <a href="javascript:void(0)">Not Registered?
+                                <button type="button" class="btn btn-primary" id="signup">Create An Account</button></a>
+                        </div>
+                    </div>
+
+                    <div class="forgetPassword hide">
+                        <h3>Forgot Your Password</h3>
+                        <div class="form-group">
+                           <%-- <input class="form-control" type="email" placeholder="Enter Registered Email" />--%>
+                            <asp:TextBox ID="txtforgotmail" runat="server" placeholder="Enter Registered Email" CssClass="form-control"></asp:TextBox>
+                            <span id="lbl_userstatus"></span>
+                           <%-- <asp:RequiredFieldValidator ID="rf111" runat="server" ControlToValidate="txtforgotmail" ForeColor="Red" ErrorMessage="Enter Registered Email" Display="Dynamic" SetFocusOnError="true" ValidationGroup="forgot" ></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="rf112" runat="server" CssClass="error" ControlToValidate="txtforgotmail" Display="Dynamic" ErrorMessage="Enter Valid Email Format" ForeColor="Red" ValidationGroup="forgot" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>--%>
+                        </div>
+                        <div class="button-box">
+                            <input class="btn theme-btn" type="button" value="Send Mail" id="btnforgotpassword" onclick="senforgotpasswordlogin();" />
+                            <%--<asp:Button ID="btnforgotpassword" runat="server" Text="Send Email" CssClass="btn theme-btn" ValidationGroup="forgot" OnClick="btnforgotpassword_Click" />--%>
+                        </div>
+                        <div class="already-register text-center"><a href="javascript:void(0)" onclick="backtologin();">Back to Login</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="userRegister" class="userPopup">
+            <div class="innerbody">
+                <div class="accountBox">
+                    <button type="button" class="close closePopup">
+                        <img src='<%= Page.ResolveUrl("images/close.png")%>' width="12" /></button>
+                    <div class="register-form">
+                        <h3>Create new account</h3>
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <%--<input class="form-control" type="text" placeholder="Full Name" />--%>
+                                <asp:TextBox ID="txtfirstname" runat="server" CssClass="form-control" placeholder="First Name"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rf1" runat="server" CssClass="error" ControlToValidate="txtfirstname" Display="Dynamic" ErrorMessage="Enter First Name" ForeColor="Red" ValidationGroup="reg"></asp:RequiredFieldValidator>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <%--<input class="form-control" type="text" placeholder="Username" />--%>
+                                <asp:TextBox ID="txtlastname" runat="server" CssClass="form-control" placeholder="Last Name"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rf2" runat="server" CssClass="error" ControlToValidate="txtlastname" Display="Dynamic" ErrorMessage="Enter Last Name" ForeColor="Red" ValidationGroup="reg"></asp:RequiredFieldValidator>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <%--<input class="form-control" type="email" placeholder="Email" />--%>
+                                <asp:TextBox ID="txtemail" runat="server" CssClass="form-control" placeholder="Email"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rf3" runat="server" CssClass="error" ControlToValidate="txtemail" Display="Dynamic" ErrorMessage="Enter valid Email" ForeColor="Red" ValidationGroup="reg"></asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="re2" runat="server" CssClass="error" ControlToValidate="txtemail" Display="Dynamic" ErrorMessage="Enter valid Email Format" ForeColor="Red" ValidationGroup="login" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <%-- <input class="form-control" type="tel" placeholder="Phone" />--%>
+                                <asp:TextBox ID="txtmobileno" runat="server" CssClass="form-control" placeholder="Mobile No. (10 digits)"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rf4" runat="server" CssClass="error" ControlToValidate="txtmobileno" Display="Dynamic" ErrorMessage="Enter Mobile No." ForeColor="Red" ValidationGroup="reg"></asp:RequiredFieldValidator>
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <%--<input class="form-control" type="text" placeholder="Address" />--%>
+                                <asp:TextBox ID="txtaddress" runat="server" CssClass="form-control" placeholder="Address"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rf5" runat="server" CssClass="error" ControlToValidate="txtaddress" Display="Dynamic" ErrorMessage="Enter Address" ForeColor="Red" ValidationGroup="reg"></asp:RequiredFieldValidator>
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <asp:DropDownList ID="drpcountry" runat="server" CssClass="form-control">
+                                    <asp:ListItem Text="India" Value="India"></asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <asp:DropDownList ID="drpsstate" runat="server" CssClass="form-control">
+                                        <asp:ListItem Text="-- State --" Value="0"></asp:ListItem>
+                                        <asp:ListItem Text="Andhra Pradesh" Value="Andhra Pradesh"></asp:ListItem>
+                                        <asp:ListItem Text="Arunachal Pradesh" Value="Arunachal Pradesh"></asp:ListItem>
+                                        <asp:ListItem Text="Assam" Value="Assam"></asp:ListItem>
+                                        <asp:ListItem Text="Andaman and Nicobar Islands" Value="Andaman and Nicobar Islands"></asp:ListItem>
+                                        <asp:ListItem Text="Bihar" Value="Bihar"></asp:ListItem>
+                                        <asp:ListItem Text="Chandigarh" Value="Chandigarh"></asp:ListItem>
+                                        <asp:ListItem Text="Chhattisgarh" Value="Chhattisgarh"></asp:ListItem>
+                                        <asp:ListItem Text="Dadar and Nagar Haveli" Value="Dadar and Nagar Haveli"></asp:ListItem>
+                                        <asp:ListItem Text="Daman and Diu" Value="Daman and Diu"></asp:ListItem>
+                                        <asp:ListItem Text="Delhi" Value="Delhi"></asp:ListItem>
+                                        <asp:ListItem Text="Goa" Value="Goa"></asp:ListItem>
+                                        <asp:ListItem Text="Gujarat" Value="Gujarat"></asp:ListItem>
+                                        <asp:ListItem Text="Haryana" Value="Haryana"></asp:ListItem>
+                                        <asp:ListItem Text="Himachal Pradesh" Value="Himachal Pradesh"></asp:ListItem>
+                                        <asp:ListItem Text="Jammu and Kashmir" Value="Jammu and Kashmir"></asp:ListItem>
+                                        <asp:ListItem Text="Jharkhand" Value="Jharkhand"></asp:ListItem>
+                                        <asp:ListItem Text="Karnataka" Value="Karnataka"></asp:ListItem>
+                                        <asp:ListItem Text="Kerala" Value="Kerala"></asp:ListItem>
+                                        <asp:ListItem Text="Lakshadweep" Value="Lakshadweep"></asp:ListItem>
+                                        <asp:ListItem Text="Madhya Pradesh" Value="Madhya Pradesh"></asp:ListItem>
+                                        <asp:ListItem Text="Maharashtra" Value="Maharashtra"></asp:ListItem>
+                                        <asp:ListItem Text="Manipur" Value="Manipur"></asp:ListItem>
+                                        <asp:ListItem Text="Meghalaya" Value="Meghalaya"></asp:ListItem>
+                                        <asp:ListItem Text="Mizoram" Value="Mizoram"></asp:ListItem>
+                                        <asp:ListItem Text="Nagaland" Value="Nagaland"></asp:ListItem>
+                                        <asp:ListItem Text="Odisha" Value="Odisha"></asp:ListItem>
+                                        <asp:ListItem Text="Puducherry" Value="Puducherry"></asp:ListItem>
+                                        <asp:ListItem Text="Punjab" Value="Punjab"></asp:ListItem>
+                                        <asp:ListItem Text="Rajasthan" Value="Rajasthan"></asp:ListItem>
+                                        <asp:ListItem Text="Sikkim" Value="Sikkim"></asp:ListItem>
+                                        <asp:ListItem Text="Tamil Nadu" Value="Tamil Nadu"></asp:ListItem>
+                                        <asp:ListItem Text="Telangana" Value="Telangana"></asp:ListItem>
+                                        <asp:ListItem Text="Tripura" Value="Tripura"></asp:ListItem>
+                                        <asp:ListItem Text="Uttar Pradesh" Value="Uttar Pradesh"></asp:ListItem>
+                                        <asp:ListItem Text="Uttarakhand" Value="Uttarakhand"></asp:ListItem>
+                                        <asp:ListItem Text="West Bengal" Value="West Bengal"></asp:ListItem>
+                                    </asp:DropDownList>
+                                <asp:RequiredFieldValidator ID="rf6" runat="server" ControlToValidate="drpsstate" ForeColor="Red" InitialValue="0" ErrorMessage="Select State" SetFocusOnError="true" Display="Dynamic" ValidationGroup="reg"></asp:RequiredFieldValidator>
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <asp:TextBox ID="txtcity" runat="server" CssClass="form-control" placeholder="City"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="error" ControlToValidate="txtcity" Display="Dynamic" ErrorMessage="Enter City" ForeColor="Red" ValidationGroup="reg"></asp:RequiredFieldValidator>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <asp:TextBox ID="txtpassword" runat="server" CssClass="form-control" TextMode="Password" placeholder="Password"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" CssClass="error" ControlToValidate="txtpassword" Display="Dynamic" ErrorMessage="Enter Password" ForeColor="Red" ValidationGroup="reg"></asp:RequiredFieldValidator>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <asp:TextBox ID="txtconfirmpass" runat="server" CssClass="form-control" TextMode="Password" placeholder="Confirm Password"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="error" ControlToValidate="txtconfirmpass" Display="Dynamic" ErrorMessage="Enter Confirm Password" ForeColor="Red" ValidationGroup="reg"></asp:RequiredFieldValidator>
+
+                                <asp:CompareValidator ID="cmp1" runat="server" ControlToValidate="txtconfirmpass" ControlToCompare="txtpassword" Display="Dynamic" ErrorMessage="Both password should be identical" ForeColor="Red" ValidationGroup="reg"></asp:CompareValidator>
+                            </div>
+                            <div class="button-box col-sm-12">
+                                <%-- <button class="btn theme-btn" type="button">Register Now</button>--%>
+                                <asp:Button ID="btnregister" runat="server" Text="Register Now" CssClass="btn theme-btn" ValidationGroup="reg" OnClick="btnregister_Click" />
+                            </div>
+                        </div>
+                        <div class="already-register text-center">
+                            <a href="javascript:void(0)">Already have an account?
+                                <button type="button" class="btn btn-primary" id="signin">Sign in</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="newslatterForm">
+            <div class="box">
+                <a class="nsClose" href="JavaScript: Void(0);">&times;</a>
+                <h3>Subscribe to our Newsletter</h3>
+                <%--<div class="form-group">
+                    
+                    <asp:TextBox ID="txtnewslettername" runat="server" placeholder="*Name" CssClass="form-control" autocomplete="off"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rf101" runat="server" ControlToValidate="txtnewslettername" Display="Dynamic" ForeColor="Red" ErrorMessage="Enter Name" SetFocusOnError="true" ValidationGroup="subscribe"></asp:RequiredFieldValidator>
+                </div>--%>
+                <div class="form-group">
+                    <%--<input class="form-control" type="email" placeholder="Your Email Address.." />--%>
+                     <asp:TextBox ID="txtnewsletteremail" runat="server" placeholder="*Your Email Address.." autocomplete="off" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtnewsletteremail" Display="Dynamic" ForeColor="Red" ErrorMessage="Enter Email" SetFocusOnError="true" ValidationGroup="subscribe"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtnewsletteremail" Display="Dynamic" ForeColor="Red" ErrorMessage="Enter valid Email" SetFocusOnError="true" ValidationGroup="subscribe" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                </div>
+                <div class="buttonBox">
+                    <%--<input class="btn theme-btn" type="submit" value="Subscribe" placeholder="" />--%>
+                    <asp:Button ID="btnsubscribe" runat="server" Text="Subscribe" CssClass="btn theme-btn" ValidationGroup="subscribe" OnClick="btnsubscribe_Click" />
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+            <div class="container-fluid">
+                <div class="pull-left">© 2022 Company Name. ALL RIGHTS RESERVED.</div>
+                
+            </div>
+        </footer>
+
+        <!--
+    ==================== Scroll Top   -->
+
+        <a class="social-action" id="scrollTop" href="html"><i class="fa fa-angle-up"></i></a>
+
+        <a class="social-action newslatter btn" href="JavaScript: Void(0);"><i class="fa fa-envelope"></i> NEWSLETTER</a>
+
+        <a class="social-action whatsapp" href="https://api.whatsapp.com/send?phone=0000000" target="_blank"><i class="fa fa-whatsapp"></i></a>
+
+
+        <%--<script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = 'https://embed.tawk.to/5cc2a179ee912b07bec4ee7b/default';
+                s1.charset = 'UTF-8';
+                s1.setAttribute('crossorigin', '*');
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>--%>
+
+        <script>
+            function showforgotdiv() {
+
+                $(".forgetPassword").removeClass("hide");
+                $(".login-form").hide();
+            }
+
+            function backtologin() {
+
+                $(".forgetPassword").addClass("hide");
+                $(".login-form").show();
+            }
+
+
+            function senforgotpasswordlogin() {
+
+                debugger;
+                $('#lbl_userstatus').text('');
+                if ($("#txtforgotmail").val() == '') {
+                    $('#lbl_userstatus').attr("style", "color:Red;");
+                    $('#lbl_userstatus').text('Enter Email');
+                }
+
+                if ($("#txtforgotmail").val() != '') {
+                    var email = $("#txtforgotmail").val();
+
+                    var reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+
+                    if (reg.test(email)) {
+                        $("#btnforgotpassword").attr("enabled", "false");
+                        $("#btnforgotpassword").val('Please Wait...');
+
+                        $.ajax({
+                            type: "POST", url: "https://www.sstylefactory.com/webMethod.aspx/ForgotPassword", data: '{EmailId:"' + email + '"}',
+                            contentType: "application/json; charset=utf-8", dataType: "json", success: function (response) {
+                                if (response.d == "[]") { }
+                                else {
+                                    var ii = response.d;
+                                    if (ii == "1") {
+                                        
+                                        $("#txtforgotmail").val('');
+                                        $("#btnforgotpassword").attr("enabled", "true");
+                                        $("#btnforgotpassword").val('SEND MAIL');
+
+                                        $('#lbl_userstatus').attr("style", "color:green;");
+                                        $('#lbl_userstatus').text('Password has been sent to your mail id.');
+                                    }
+                                    else {
+                                        
+                                    }
+
+                                }
+                            }, failure: function (response) { alert("Failure"); }
+                        });
+                    }
+                    else {
+
+                        $('#lbl_userstatus').text('Enter valid Email');
+                        $('#lbl_userstatus').attr("style", "color:Red;");
+                        //$('#lbl_userstatus').text('Not Valid Email');
+                    }
+                }
+            }
+
+
+        </script>
+    </form>
+</body>
+</html>

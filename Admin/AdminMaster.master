@@ -1,0 +1,190 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMaster.master.cs" Inherits="admin_AdminMaster" %>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Fab Fashion Accessories Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../admincss/css/bootstrap.min.css" rel="stylesheet" />
+    <link href='<%# Common.GetLatestVersion(Page.ResolveUrl("../admincss/css/style-responsive.css")) %>' rel="stylesheet" />
+    <link href='<%# Common.GetLatestVersion(Page.ResolveUrl("../admincss/css/atom-style.css")) %>' rel="stylesheet" />
+    <link href='<%# Page.ResolveUrl("../admincss/css/font-awesome.min.css") %>' rel="stylesheet" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css' />
+
+    <link href="../admincss/css/jquery.toastmessage.css" rel="stylesheet" />
+    <link href="../admincss/css/sweetalert.css" rel="stylesheet" />
+
+
+    <%-- <script src="../admincss/js/jquery-1.10.2.js"></script>--%>
+    <script src="../admincss/js/jquery.3.2.1.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../admincss/js/jquery.toastmessage.js"></script>
+    <script src="../admincss/js/sweetalert.min.js"></script>
+
+    <script type="text/javascript">
+        window.alert = function (message) {
+            swal(message);
+        };
+        function showmenu() {
+            $('.adminMenu').fadeIn('slow');
+        }
+
+        function hideAdminMenu() {
+            $('.adminMenu').fadeOut('slow');
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body onclick="hideAdminMenu()">
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server" ID="script" EnablePageMethods="true" AsyncPostBackTimeout="600"></asp:ScriptManager>
+        <!--layout-container start-->
+        <div id="layout-container">
+            <!--Left navbar start-->
+            <asp:UpdatePanel ID="updatemenu" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div id="nav">
+                        <!--logo start-->
+                        <div class="profile">
+                            <div class="logo" style="height: 64px">
+                                <a href="AdminHome.aspx">
+                                    <img src="../admincss/images/avatar.png" alt="logo" width="64"></a>
+                            </div>
+                        </div>
+                        <!--logo end-->
+
+                        <!--navigation start-->
+                        <ul class="navigation">
+                            <li><a runat="server" id="home" href="AdminHome.aspx"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
+
+                            <li class="sub"><a href="#" runat="server" id="A4"><i class="fa fa-list-alt"></i><span>Banner</span></a>
+                                <ul class="navigation-sub">
+                                    <li><a id="mbanner" runat="server" href="banner.aspx">Main Banner (App)</a></li>
+                                    <li><a id="A13" runat="server" href="homecollectionbanner.aspx">Home Collection Banner (App)</a></li>
+                                    <li><a id="A19" runat="server" href="gallerybanner.aspx">Home Gallery Banner (Website)</a></li>
+                                    <li><a id="A30" runat="server" href="stripbanner.aspx">Strip Banner (Website/Mobile)</a></li>
+                                    <li><a id="A31" runat="server" href="collectionmaster.aspx">Collection Banner (App)</a></li>
+                                    
+                                </ul>
+                            </li>
+                            <li class="sub"><a href="#" runat="server" id="A11"><i class="fa fa-list-alt"></i><span>Master</span></a>
+                                <ul class="navigation-sub">
+                                    <li><a id="A29" runat="server" href="uspmaster.aspx">USP Content</a></li>
+                                    <li><a id="A12" runat="server" href="collectionmaster.aspx">Collection</a></li>
+                                    <li><a id="A1" runat="server" href="categorymaster.aspx">Category</a></li>
+                                    <li><a id="A2" runat="server" href="materialmaster.aspx">Material</a></li>
+                                    <li><a id="A17" runat="server" href="size.aspx">Size</a></li>
+                                    <li><a id="A18" runat="server" href="color.aspx">Color</a></li>
+                                    <li><a id="A20" runat="server" href="features.aspx">Features</a></li>
+                                    <li><a id="A7" runat="server" href="shippingmaster.aspx">Shipping Company</a></li>
+                                    <li><a id="A16" runat="server" href="discountcoupon.aspx">Discount Coupon</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="sub"><a href="#" runat="server" id="A8"><i class="fa fa-list-alt"></i><span>Stock</span></a>
+                                <ul class="navigation-sub">
+                                    <li><a id="A9" runat="server" href="stockentry.aspx">Add Stock</a></li>
+                                    <li><a id="A3" runat="server" href="stock.aspx">Stock List</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="sub"><a href="#" runat="server" id="A26"><i class="fa fa-list-alt"></i><span>Others</span></a>
+                                <ul class="navigation-sub">
+                                    <li><a id="A27" runat="server" href="proreviews.aspx">Product Review</a></li>
+                                    <li><a id="A28" runat="server" href="newsletterlist.aspx">Newsletter</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="sub"><a href="#" runat="server" id="A5"><i class="fa fa-list-alt"></i><span>Order</span></a>
+                                <ul class="navigation-sub">
+                                    <li><a id="A6" runat="server" href="OrderList.aspx">Order List</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub"><a href="#" runat="server" id="A10"><i class="fa fa-list-alt"></i><span>Notification</span></a>
+                                <ul class="navigation-sub">
+                                    <li><a id="A14" runat="server" href="notification.aspx">Reg. Users</a></li>
+                                    <li><a id="A15" runat="server" href="notificationallusers.aspx">All Users</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub"><a href="#" runat="server" id="A21"><i class="fa fa-list-alt"></i><span>SEO</span></a>
+                                <ul class="navigation-sub">
+                                    <li><a id="A22" runat="server" href="seocategoryurl.aspx">Category/Website Url List</a></li>
+                                    <li><a id="A23" runat="server" href="seoproducturl.aspx">Product Url List</a></li>
+                                    <li><a id="A24" runat="server" href="seoproductmeta.aspx">Import Product Meta</a></li>
+                                    <li><a id="A25" runat="server" href="seocategorymeta.aspx">Import Category/Website Url Meta</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!--navigation end-->
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <!--Left navbar end-->
+            <!--main start-->
+            <div id="main">
+                <!--head-title start-->
+                <div class="head-title">
+                    <div class="menu-switch"><i class="fa fa-bars"></i></div>
+                    <!--row start-->
+                    <div class="row">
+                        <!--col-md-12 start-->
+                        <div class="col-md-12">
+                            <!--profile dropdown start-->
+                            <ul class="user-info pull-right fadeInLeftBig animated">
+
+                                <li class="profile-info dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#" onmouseover="showmenu()">
+                                    <img alt="" src="../admincss/images/avatar.png" width="78"><asp:Label ID="lblusername" runat="server"></asp:Label>
+                                </a>
+                                    <ul class="dropdown-menu adminMenu">
+                                        <li class="caret"></li>
+                                        <li><a href="ChangePassword.aspx" id="aChangePwd" runat="server"><i class="fa fa-user"></i>Change Password </a></li>
+                                        <li>
+                                            <asp:LinkButton runat="server" ID="lnkLogout" OnClick="lnkLogout_Click"><i class="fa fa-clipboard"></i>Log Out </asp:LinkButton></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <!--col-md-12 end-->
+                    </div>
+                    <!--row end-->
+                </div>
+
+                <!--margin-container start-->
+                <div style="border: solid 1px #000; width: 100%;">
+                    <asp:UpdateProgress runat="server" ID="UpdateProgress">
+                        <ProgressTemplate>
+                            <div style="position: fixed; top: 0; left: 0; cursor: wait; background: url(../images/tab_bg.png) 0 0 repeat; z-index: 99999; width: 100%; height: 100%; opacity: 0.8;">
+                                <div style="text-align: center; margin: 0 0 0 0; opacity: 1; z-index: 999999; padding: 5px 0px; background: green; color: #fff;">
+                                    Please wait while processing...
+                                </div>
+                            </div>
+                        </ProgressTemplate>
+                    </asp:UpdateProgress>
+                </div>
+                <div class="margin-container">
+
+                    <!--scrollable wrapper start-->
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <!--scrollable wrapper end-->
+                    <div id="toTop"><i class="fa fa-angle-double-up"></i></div>
+                </div>
+                <!--margin-container end-->
+
+            </div>
+            <!--main end-->
+
+        </div>
+        <!--layout-container end-->
+
+        <script src="<%= Common.GetLatestVersion("../admincss/js/utility.js") %>"></script>
+        <script src="../admincss/js/bootstrap.min.js"></script>
+        <script src='<%= Common.GetLatestVersion(Page.ResolveUrl("../admincss/js/smooth-sliding-menu.js"))%>'></script>
+        <script src='<%= Common.GetLatestVersion(Page.ResolveUrl("../admincss/js/jPushMenu.js"))%>'></script>
+
+    </form>
+</body>
+</html>

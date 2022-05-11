@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="65d7a28eafb240e3b4182e1ea2989cdb" Name="Diagram1" ZoomLevel="101">
+        <EntityTypeShape EntityType="FabAccessoriesModel.AdminLogin" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.Banner" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.Catalog" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.CategoryMaster" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.CollectionBanner" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.CollectionMaster" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.ContactU" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.Exibition" Width="1.5" PointX="6.75" PointY="4.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.Itembanner" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.MaterialMaster" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.NewsLetter" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.OrderDetail" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.OrderTbl" Width="1.5" PointX="8.75" PointY="8.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.Producthistory" Width="1.5" PointX="4.75" PointY="9.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.productstone" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.UserInfo" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.WebCollInnerBanner" Width="1.5" PointX="10.75" PointY="4.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.ProductMaster_1" Width="1.5" PointX="10.75" PointY="8.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.OtherImage" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.OrderBillingInfo" Width="1.5" PointX="2.75" PointY="12.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.OrderShippingDetail" Width="1.5" PointX="12.75" PointY="3.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.OrderTracking" Width="1.5" PointX="4.75" PointY="12.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.DiscountCoupon" Width="1.5" PointX="12.75" PointY="8.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.OrderPaymentResponse" Width="1.5" PointX="12.75" PointY="11.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.ShipMaster" Width="1.5" PointX="6.75" PointY="13.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.LoginHistory" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.SizeMaster" Width="1.5" PointX="14.75" PointY="5.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.HomeGalleryBanner" Width="1.5" PointX="14.75" PointY="8.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.FeatureMaster" Width="1.5" PointX="14.75" PointY="11.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.ProductFeature" Width="1.5" PointX="14.75" PointY="14.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.ProductMaster" Width="1.5" PointX="8.75" PointY="15.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.Seo" Width="1.5" PointX="10.75" PointY="15.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.ProductReview" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.USPDetail" Width="1.5" PointX="16.75" PointY="4.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.StripBanner" Width="1.5" PointX="4.75" PointY="16.75" />
+        <EntityTypeShape EntityType="FabAccessoriesModel.ColorMaster" Width="1.5" PointX="16.75" PointY="7.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
